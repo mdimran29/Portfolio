@@ -26,6 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
@@ -35,5 +36,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# pdf
-profile.pdf
+# Backend logs
+backend/server.log
+backend/nohup.out
+
+# PDF files (if you want to keep PDFs private)
+# profile.pdf
+
+# Keep important markdown files like README.md
+# *.md

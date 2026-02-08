@@ -43,6 +43,18 @@ const StarFieldScene = dynamic(() => import('@/components/scenes/StarFieldScene'
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  
+  // Contact form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState<{
+    type: 'idle' | 'loading' | 'success' | 'error';
+    message: string;
+  }>({ type: 'idle', message: '' });
 
   useEffect(() => {
     setMounted(true);
@@ -76,6 +88,56 @@ export default function Home() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Handle form input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus({ type: 'loading', message: 'Sending message...' });
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setFormStatus({
+          type: 'success',
+          message: 'Message sent successfully! I\'ll get back to you soon.',
+        });
+        // Reset form
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setFormStatus({
+          type: 'error',
+          message: data.error || 'Failed to send message. Please try again.',
+        });
+      }
+    } catch (error) {
+      setFormStatus({
+        type: 'error',
+        message: 'Network error. Please check your connection and try again.',
+      });
+    }
+
+    // Clear status after 5 seconds
+    setTimeout(() => {
+      setFormStatus({ type: 'idle', message: '' });
+    }, 5000);
   };
 
   return (
@@ -983,13 +1045,28 @@ export default function Home() {
             {/* Contact Form */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">Send a Message</h3>
-              <form className="space-y-6">
+              
+              {/* Status Message */}
+              {formStatus.type !== 'idle' && (
+                <div className={`mb-6 p-4 rounded-lg text-center ${
+                  formStatus.type === 'success' ? 'bg-green-500/20 border border-green-500/50 text-green-400' :
+                  formStatus.type === 'error' ? 'bg-red-500/20 border border-red-500/50 text-red-400' :
+                  'bg-blue-500/20 border border-blue-500/50 text-blue-400'
+                }`}>
+                  {formStatus.message}
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-white/80 text-sm font-medium mb-2">Name</label>
                     <input
                       type="text"
                       id="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors"
                       placeholder="Your name"
                     />
@@ -999,6 +1076,9 @@ export default function Home() {
                     <input
                       type="email"
                       id="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors"
                       placeholder="your@email.com"
                     />
@@ -1009,6 +1089,9 @@ export default function Home() {
                   <input
                     type="text"
                     id="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors"
                     placeholder="What's this about?"
                   />
@@ -1018,15 +1101,21 @@ export default function Home() {
                   <textarea
                     id="message"
                     rows={6}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors resize-none"
                     placeholder="Your message..."
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/20"
+                  disabled={formStatus.type === 'loading'}
+                  className={`w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/20 ${
+                    formStatus.type === 'loading' ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
                 >
-                  Send Message
+                  {formStatus.type === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
