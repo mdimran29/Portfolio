@@ -298,8 +298,8 @@ export default function Home() {
 
                 {/* Profile Photo */}
                 <div className="relative z-10 group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-3xl blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>
-                  <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] rounded-3xl overflow-hidden border-4 border-cyan-400/30 shadow-2xl shadow-cyan-500/20 group-hover:border-cyan-400/50 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-300 animate-pulse"></div>
+                  <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-cyan-400/30 shadow-2xl shadow-cyan-500/20 group-hover:border-cyan-400/50 transition-all duration-300">
                     <img
                       src="/images/profile.jpeg"
                       alt="Md Imran - Blockchain Engineer"
@@ -658,6 +658,427 @@ export default function Home() {
                   <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Chainlink VRF</span>
                   <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Testing</span>
                   <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Gas Optimization</span>
+                </div>
+              </div>
+
+              {/* Project 5: Blockchain Tax Receipt System */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white">Blockchain Tax Receipt System</h3>
+                  <div className="flex gap-3">
+                    <a href="https://github.com/mdimran29" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  Full-stack blockchain application generating legally binding, cryptographically signed tax receipts for cryptocurrency staking rewards using OpenLaw smart contracts and MetaMask wallet integration.
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>MetaMask Integration - Connect wallet and sign receipts with EIP-191 standard</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>OpenLaw-Powered Legal Documents - Smart contract execution for legally binding receipts</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Blockchain Verification - Immutable proof of receipt authenticity with signature verification</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>QR Code Integration - Automatic Etherscan transaction QR codes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Professional PDF Export - High-quality, downloadable tax receipts with comprehensive data</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Real-time USD Calculations - Automatic value computation for principal, rewards, and allocations</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Node.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Express.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">React 18</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">OpenLaw API</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Ethers.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">MetaMask</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">PDFKit</span>
+                </div>
+              </div>
+
+              {/* Project 6: DeFi Stablecoin Protocol (DSC) */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white">DeFi Stablecoin Protocol (DSC)</h3>
+                  <div className="flex gap-3">
+                    <a href="https://github.com/mdimran29/foundry-defi-stablecoin" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  Algorithmic USD-pegged stablecoin with 200% overcollateralization, supporting WETH and WBTC deposits with Chainlink price feeds and automated liquidation mechanisms for maintaining system solvency.
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Overcollateralized design with 200% collateral requirement</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Chainlink oracle integration for real-time WETH/WBTC pricing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Automated liquidation system with 10% bonus incentives</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Health factor monitoring for position safety tracking</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>ReentrancyGuard protection and access control patterns</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Single-transaction deposit-and-mint functionality</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>MakerDAO-inspired architecture without governance complexity</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Comprehensive fuzz testing with Foundry for edge case discovery</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Gas-optimized implementation with custom errors and efficient storage</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Solidity</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Foundry</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Chainlink</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">OpenZeppelin</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">ERC-20</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Cast CLI</span>
+                </div>
+              </div>
+
+              {/* Project 7: Cross-Chain Rebase Token */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white">Cross-Chain Rebase Token</h3>
+                  <div className="flex gap-3">
+                    <a href="https://github.com/mdimran29/cross-chain-rebase-token" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  Advanced Solidity implementation of a rebase token with cross-chain bridging capabilities for multi-chain DeFi operations. <span className="text-cyan-400 font-semibold">⭐ 1 Star</span>
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Rebase Mechanism - Elastic supply token with automated balance adjustments</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Cross-Chain Bridging - Seamless token transfers across multiple blockchain networks</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Multi-Chain Compatibility - Supports multiple EVM-compatible chains</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Supply Adjustment Logic - Algorithmic supply expansion/contraction based on target price</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Gas-optimized rebase calculations and bridge operations</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Solidity</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Foundry</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Cross-Chain</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">ERC-20</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Bridge</span>
+                </div>
+              </div>
+
+              {/* Project 8: Foundry NFT */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white">Foundry NFT Collection</h3>
+                  <div className="flex gap-3">
+                    <a href="https://github.com/mdimran29/foundry-nft" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  Comprehensive NFT implementation featuring IPFS-hosted and fully on-chain SVG NFTs with production deployment. <span className="text-cyan-400 font-semibold">⭐ 1 Star</span> • <span className="text-purple-400">Cyfrin Course</span>
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Dual NFT Types - IPFS-hosted and 100% on-chain SVG implementations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Dynamic NFTs - Mood-based NFTs (Happy/Sad) that change based on conditions</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Chainlink VRF - Random NFT trait generation (subscription-based)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Dog NFT Collection - Pug, Shiba Inu, and St. Bernard themed NFTs</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Comprehensive Testing - Unit, integration, forked network, and staging tests</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Solidity</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Foundry</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">IPFS</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">SVG</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Chainlink VRF</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">ERC-721</span>
+                </div>
+              </div>
+
+              {/* Project 9: Node Hotels Backend API */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white">Node Hotels Backend API</h3>
+                  <div className="flex gap-3">
+                    <a href="https://github.com/mdimran29/node_hotels" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  Full-featured hotel management backend system with MongoDB database integration and RESTful API architecture.
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>MongoDB Integration - Mongoose ODM for robust data modeling</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>RESTful Architecture - Clean API design for hotel operations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Connection Management - Robust database connection with event listeners</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Cloud Database Support - MongoDB Atlas integration</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Error Handling - Comprehensive error tracking and logging</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Node.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Express.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">MongoDB</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Mongoose</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">REST API</span>
+                </div>
+              </div>
+
+              {/* Project 10: Manage Your Todolist */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white">Manage Your Todolist</h3>
+                  <div className="flex gap-3">
+                    <a href="https://github.com/mdimran29/Manage-Your-Todolist" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  Modern task management application built with React.js featuring full CRUD operations and responsive Tailwind CSS design. <span className="text-cyan-400 font-semibold">⭐ 1 Star</span> • <span className="text-green-400">MIT License</span>
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Full CRUD Operations - Add, edit, and delete tasks with intuitive interface</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>React Hooks - Modern state management with useState and useEffect</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Responsive Design - Mobile-first Tailwind CSS implementation</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Local Storage - Persistent task data across sessions</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Clean UI/UX - User-friendly interface with smooth interactions</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">React.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Tailwind CSS</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">JavaScript</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">LocalStorage</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">HTML5</span>
+                </div>
+              </div>
+
+              {/* Project 11: Gemini AI Project */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white">Gemini AI Project</h3>
+                  <div className="flex gap-3">
+                    <a href="https://github.com/mdimran29/Gemini-ai-Project" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  AI-powered application leveraging Google&apos;s Gemini AI capabilities. <span className="text-cyan-400 font-semibold">⭐ 1 Star</span> • <span className="text-amber-400">Sept 2024</span>
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Integration with Gemini AI API</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>AI-driven functionality and interactions</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Modern JavaScript implementation</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>User interface for AI interactions</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">JavaScript</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">React</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Gemini AI API</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">AI/ML</span>
+                </div>
+              </div>
+
+              {/* Project 12: Blockchain Tax Receipt Generator */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-white">Blockchain Tax Receipt Generator</h3>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  Full-stack blockchain application generating legally binding, cryptographically signed tax receipts for cryptocurrency staking rewards using OpenLaw smart contracts and MetaMask wallet integration.
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-white/70 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>MetaMask Integration - Connect wallet and sign receipts with EIP-191 standard</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>OpenLaw-Powered Legal Documents - Smart contract execution for legally binding receipts</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Blockchain Verification - Immutable proof of receipt authenticity with signature verification</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>QR Code Integration - Automatic Etherscan transaction QR codes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Professional PDF Export - High-quality, downloadable tax receipts with comprehensive data</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-cyan-400 mr-2">▹</span>
+                      <span>Real-time USD Calculations - Automatic value computation for principal, rewards, and allocations</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Node.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Express.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">React 18</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Vite</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">OpenLaw API</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">Ethers.js</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">MetaMask</span>
+                  <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 text-xs">PDFKit</span>
                 </div>
               </div>
             </div>
