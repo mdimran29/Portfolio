@@ -154,7 +154,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               Md Imran
             </div>
             
@@ -163,7 +163,7 @@ export default function Home() {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-base font-medium transition-colors ${
                     activeSection === item.toLowerCase()
                       ? 'text-cyan-400'
                       : 'text-white/70 hover:text-white'
@@ -1202,7 +1202,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white">Blockchain & Smart Contracts</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['Solidity', 'Foundry', 'Hardhat', 'Ethereum', 'EVM', 'Web3.js', 'ethers.js', 'viem'].map((skill) => (
+                  {['Solidity', 'Foundry', 'Hardhat', 'Truffle', 'Ethereum', 'EVM', 'Web3.js', 'ethers.js', 'viem', 'IPFS', 'Arweave'].map((skill) => (
                     <span key={skill} className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-400/30 rounded-lg text-cyan-300 text-sm font-medium">
                       {skill}
                     </span>
@@ -1232,7 +1232,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white">Development Tools</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['Git', 'GitHub Actions', 'Docker', 'Alchemy', 'Infura', 'The Graph', 'IPFS', 'Tenderly'].map((skill) => (
+                  {['Git', 'GitHub Actions', 'Docker', 'AWS', 'Postman', 'Alchemy', 'Infura', 'The Graph', 'Tenderly'].map((skill) => (
                     <span key={skill} className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-400/30 rounded-lg text-cyan-300 text-sm font-medium">
                       {skill}
                     </span>
@@ -1247,7 +1247,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white">Frontend Development</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML/CSS', 'Wagmi', 'RainbowKit'].map((skill) => (
+                  {['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'Redux', 'Wagmi', 'RainbowKit'].map((skill) => (
                     <span key={skill} className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-400/30 rounded-lg text-cyan-300 text-sm font-medium">
                       {skill}
                     </span>
@@ -1277,7 +1277,37 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white">Programming Languages</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['Solidity', 'TypeScript', 'JavaScript', 'Python', 'C++', 'Rust', 'Assembly (EVM)'].map((skill) => (
+                  {['Solidity', 'TypeScript', 'JavaScript', 'Python', 'C++', 'C', 'Java', 'Rust', 'Assembly (EVM)'].map((skill) => (
+                    <span key={skill} className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-400/30 rounded-lg text-cyan-300 text-sm font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Backend Development */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all">
+                <div className="flex items-center mb-4">
+                  <span className="text-3xl mr-3">⚙️</span>
+                  <h3 className="text-xl font-bold text-white">Backend Development</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {['Node.js', 'Express.js', 'GraphQL', 'Socket.io', 'REST API', 'Microservices'].map((skill) => (
+                    <span key={skill} className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-400/30 rounded-lg text-cyan-300 text-sm font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Databases */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all">
+                <div className="flex items-center mb-4">
+                  <span className="text-3xl mr-3">🛢️</span>
+                  <h3 className="text-xl font-bold text-white">Databases</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {['MongoDB', 'PostgreSQL', 'Firebase', 'SQLite', 'Redis'].map((skill) => (
                     <span key={skill} className="px-3 py-1.5 bg-cyan-500/10 border border-cyan-400/30 rounded-lg text-cyan-300 text-sm font-medium">
                       {skill}
                     </span>

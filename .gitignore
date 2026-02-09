@@ -40,8 +40,11 @@ next-env.d.ts
 backend/server.log
 backend/nohup.out
 
+# Documentation files (keep only README files)
+*.md
+!README.md
+!backend/README.md
+!public/images/README.md
+
 # PDF files (if you want to keep PDFs private)
 # profile.pdf
-
-# Keep important markdown files like README.md
-# *.md
