@@ -56,6 +56,9 @@ export default function Home() {
     message: string;
   }>({ type: 'idle', message: '' });
 
+  // Theme/Brightness mode state (night/twilight/day)
+  const [brightnessMode, setBrightnessMode] = useState<'night' | 'twilight' | 'day'>('night');
+
   useEffect(() => {
     setMounted(true);
     
@@ -142,13 +145,56 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative overflow-hidden bg-black">
-      {/* Fixed Star Field Background */}
-      <div className="fixed inset-0 z-0">
+      {/* Fixed Star Field Background - Fades during day */}
+      <div 
+        className={`fixed inset-0 z-0 transition-opacity duration-1000 ${
+          brightnessMode === 'night' 
+            ? 'opacity-100' 
+            : brightnessMode === 'twilight'
+            ? 'opacity-40'
+            : 'opacity-10'
+        }`}
+      >
         <StarFieldScene />
       </div>
 
       {/* Background particle field */}
       <ThreeBackground density={2500} speed={0.5} />
+      
+      {/* Dynamic Day/Night Overlay */}
+      <div 
+        className={`fixed inset-0 pointer-events-none transition-all duration-1000 ${
+          brightnessMode === 'night' 
+            ? 'bg-transparent opacity-0' 
+            : brightnessMode === 'twilight'
+            ? 'bg-gradient-to-b from-purple-900/40 via-blue-900/30 to-orange-900/20 opacity-100'
+            : 'bg-gradient-to-b from-sky-300/50 via-blue-200/40 to-yellow-100/30 opacity-100'
+        }`}
+        style={{ zIndex: 1 }}
+      />
+
+      {/* Sun/Moon Effect */}
+      {brightnessMode === 'day' && (
+        <div 
+          className="fixed top-20 right-20 w-32 h-32 rounded-full pointer-events-none animate-pulse"
+          style={{ 
+            background: 'radial-gradient(circle, rgba(255,223,0,0.8) 0%, rgba(255,165,0,0.4) 50%, transparent 100%)',
+            boxShadow: '0 0 80px 40px rgba(255,223,0,0.3)',
+            zIndex: 2 
+          }}
+        />
+      )}
+      
+      {brightnessMode === 'twilight' && (
+        <div 
+          className="fixed top-20 right-20 w-24 h-24 rounded-full pointer-events-none"
+          style={{ 
+            background: 'radial-gradient(circle, rgba(255,200,150,0.6) 0%, rgba(255,150,100,0.3) 50%, transparent 100%)',
+            boxShadow: '0 0 60px 30px rgba(255,150,100,0.2)',
+            zIndex: 2 
+          }}
+        />
+      )}
       
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
@@ -180,6 +226,43 @@ export default function Home() {
             >
               Resume
             </a>
+
+            {/* Day/Night Theme Toggle */}
+            <div className="hidden md:flex items-center gap-2 ml-4 bg-black/40 p-1 rounded-xl border border-white/10">
+              <button
+                onClick={() => setBrightnessMode('night')}
+                className={`p-2.5 rounded-lg transition-all ${
+                  brightnessMode === 'night'
+                    ? 'bg-gradient-to-br from-blue-900/50 to-purple-900/50 text-blue-300 shadow-lg shadow-blue-500/20'
+                    : 'text-white/40 hover:text-white/70 hover:bg-white/5'
+                }`}
+                title="Night Mode - Full Stars"
+              >
+                <span className="text-xl">🌙</span>
+              </button>
+              <button
+                onClick={() => setBrightnessMode('twilight')}
+                className={`p-2.5 rounded-lg transition-all ${
+                  brightnessMode === 'twilight'
+                    ? 'bg-gradient-to-br from-orange-900/50 to-purple-900/50 text-orange-300 shadow-lg shadow-orange-500/20'
+                    : 'text-white/40 hover:text-white/70 hover:bg-white/5'
+                }`}
+                title="Twilight Mode - Sunset Glow"
+              >
+                <span className="text-xl">🌆</span>
+              </button>
+              <button
+                onClick={() => setBrightnessMode('day')}
+                className={`p-2.5 rounded-lg transition-all ${
+                  brightnessMode === 'day'
+                    ? 'bg-gradient-to-br from-yellow-400/30 to-orange-400/30 text-yellow-300 shadow-lg shadow-yellow-500/20'
+                    : 'text-white/40 hover:text-white/70 hover:bg-white/5'
+                }`}
+                title="Day Mode - Bright Sun"
+              >
+                <span className="text-xl">☀️</span>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -1445,7 +1528,7 @@ export default function Home() {
             <LightTrailsScene />
           </div>
           
-          <div className="max-w-4xl mx-auto relative z-10">
+          <div className="max-w-7xl mx-auto relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
               Let&apos;s Build Together
             </h2>
@@ -1453,132 +1536,202 @@ export default function Home() {
               Open to blockchain development opportunities, DeFi collaborations, and innovative Web3 projects. Let&apos;s create something amazing.
             </p>
             
-            {/* Contact Cards */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-              <a 
-                href="mailto:dev.mdimran@gmail.com"
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-cyan-400/30 transition-all group text-center"
-              >
-                <div className="text-4xl mb-3">📧</div>
-                <h3 className="text-white font-semibold mb-2">Email</h3>
-                <p className="text-cyan-400 text-sm group-hover:underline break-all">dev.mdimran@gmail.com</p>
-              </a>
+            {/* Two Column Layout: Form (Left) + Contact Info (Right) */}
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
               
-              <a 
-                href="https://www.linkedin.com/in/mdimran29"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-cyan-400/30 transition-all group text-center"
-              >
-                <div className="text-4xl mb-3">💼</div>
-                <h3 className="text-white font-semibold mb-2">LinkedIn</h3>
-                <p className="text-cyan-400 text-sm group-hover:underline">mdimran29</p>
-              </a>
-              
-              <a 
-                href="https://github.com/mdimran29"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-cyan-400/30 transition-all group text-center"
-              >
-                <div className="text-4xl mb-3">💻</div>
-                <h3 className="text-white font-semibold mb-2">GitHub</h3>
-                <p className="text-cyan-400 text-sm group-hover:underline">mdimran29</p>
-              </a>
-              
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
-                <div className="text-4xl mb-3">📱</div>
-                <h3 className="text-white font-semibold mb-2">Phone</h3>
-                <p className="text-white/70 text-sm">+918910992195</p>
-              </div>
-            </div>
+              {/* LEFT SIDE - Contact Form */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+                
+                {/* Status Message */}
+                {formStatus.type !== 'idle' && (
+                  <div className={`mb-6 p-4 rounded-lg text-center ${
+                    formStatus.type === 'success' ? 'bg-green-500/20 border border-green-500/50 text-green-400' :
+                    formStatus.type === 'error' ? 'bg-red-500/20 border border-red-500/50 text-red-400' :
+                    'bg-blue-500/20 border border-blue-500/50 text-blue-400'
+                  }`}>
+                    {formStatus.message}
+                  </div>
+                )}
 
-            {/* Contact Form */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Send a Message</h3>
-              
-              {/* Status Message */}
-              {formStatus.type !== 'idle' && (
-                <div className={`mb-6 p-4 rounded-lg text-center ${
-                  formStatus.type === 'success' ? 'bg-green-500/20 border border-green-500/50 text-green-400' :
-                  formStatus.type === 'error' ? 'bg-red-500/20 border border-red-500/50 text-red-400' :
-                  'bg-blue-500/20 border border-blue-500/50 text-blue-400'
-                }`}>
-                  {formStatus.message}
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-white/80 text-sm font-medium mb-2">Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-white/80 text-sm font-medium mb-2">Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
                   <div>
-                    <label htmlFor="name" className="block text-white/80 text-sm font-medium mb-2">Name</label>
+                    <label htmlFor="subject" className="block text-white/80 text-sm font-medium mb-2">Subject</label>
                     <input
                       type="text"
-                      id="name"
-                      value={formData.name}
+                      id="subject"
+                      value={formData.subject}
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors"
-                      placeholder="Your name"
+                      placeholder="What's this about?"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-white/80 text-sm font-medium mb-2">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={formData.email}
+                    <label htmlFor="message" className="block text-white/80 text-sm font-medium mb-2">Message</label>
+                    <textarea
+                      id="message"
+                      rows={6}
+                      value={formData.message}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors"
-                      placeholder="your@email.com"
-                    />
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors resize-none"
+                      placeholder="Your message..."
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={formStatus.type === 'loading'}
+                    className={`w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/20 ${
+                      formStatus.type === 'loading' ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
+                  >
+                    {formStatus.type === 'loading' ? 'Sending...' : 'Send Message'}
+                  </button>
+                </form>
+              </div>
+
+              {/* RIGHT SIDE - Contact Information & Map */}
+              <div>
+                
+                {/* Contact Information Card with Embedded Map */}
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                  <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                  
+                  <div className="space-y-6">
+                    {/* Email */}
+                    <a 
+                      href="mailto:dev.mdimran@gmail.com"
+                      className="flex items-start gap-4 group hover:bg-white/5 p-3 rounded-lg transition-all"
+                    >
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        📧
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Email</h4>
+                        <p className="text-cyan-400 text-sm group-hover:underline break-all">dev.mdimran@gmail.com</p>
+                      </div>
+                    </a>
+
+                    {/* Phone */}
+                    <a 
+                      href="tel:+918910992195"
+                      className="flex items-start gap-4 group hover:bg-white/5 p-3 rounded-lg transition-all"
+                    >
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        📱
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Phone</h4>
+                        <p className="text-cyan-400 text-sm group-hover:underline">+91 8910992195</p>
+                      </div>
+                    </a>
+
+                    {/* WhatsApp */}
+                    <a 
+                      href="https://wa.me/918910992195"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-4 group hover:bg-white/5 p-3 rounded-lg transition-all"
+                    >
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        �
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">WhatsApp</h4>
+                        <p className="text-green-400 text-sm group-hover:underline">Chat on WhatsApp</p>
+                      </div>
+                    </a>
+
+                    {/* Location */}
+                    <div className="flex items-start gap-4 p-3">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-lg flex items-center justify-center text-2xl">
+                        📍
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Location</h4>
+                        <p className="text-white/70 text-sm">Kolkata, West Bengal, India</p>
+                      </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+                    {/* Social Links */}
+                    <div>
+                      <h4 className="text-white font-semibold mb-4">Connect with me</h4>
+                      <div className="flex gap-3">
+                        <a 
+                          href="https://github.com/mdimran29"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white hover:bg-white/10 hover:border-cyan-400/30 transition-all group"
+                        >
+                          <span className="text-xl group-hover:scale-110 transition-transform">💻</span>
+                          <span className="text-sm font-medium">GitHub</span>
+                        </a>
+                        <a 
+                          href="https://www.linkedin.com/in/mdimran29"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white hover:bg-white/10 hover:border-cyan-400/30 transition-all group"
+                        >
+                          <span className="text-xl group-hover:scale-110 transition-transform">💼</span>
+                          <span className="text-sm font-medium">LinkedIn</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mt-6"></div>
+
+                  {/* Google Map - Square Shape inside same card */}
+                  <div className="mt-6">
+                    <h4 className="text-white font-semibold mb-4">📍 Find Me Here</h4>
+                    <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-white/10">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471220.05591356344!2d88.04952462343486!3d22.535564936575154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1707454800000!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="absolute inset-0"
+                      ></iframe>
+                    </div>
+                    <p className="text-white/60 text-xs text-center mt-3">Kolkata, West Bengal, India</p>
                   </div>
                 </div>
-                <div>
-                  <label htmlFor="subject" className="block text-white/80 text-sm font-medium mb-2">Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors"
-                    placeholder="What's this about?"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-white/80 text-sm font-medium mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-cyan-400/50 transition-colors resize-none"
-                    placeholder="Your message..."
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  disabled={formStatus.type === 'loading'}
-                  className={`w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105 shadow-lg shadow-cyan-500/20 ${
-                    formStatus.type === 'loading' ? 'opacity-50 cursor-not-allowed' : ''
-                  }`}
-                >
-                  {formStatus.type === 'loading' ? 'Sending...' : 'Send Message'}
-                </button>
-              </form>
-            </div>
 
-            {/* Location */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 max-w-md mx-auto mt-8 text-center">
-              <div className="text-4xl mb-3">📍</div>
-              <h3 className="text-white font-semibold mb-2 text-lg">Location</h3>
-              <p className="text-white/70 text-sm leading-relaxed">
-                Kolkata, India<br />
-                 
-              </p>
+              </div>
             </div>
           </div>
         </section>
