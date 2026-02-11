@@ -1,0 +1,287 @@
+# Md Imran - Blockchain Engineer Portfolio
+
+> Blockchain Engineer & Full Stack Web3 Developer specializing in DeFi protocols, smart contract development, and decentralized applications.
+
+## Quick Links
+- Website: https://mdimran29.vercel.app (or your domain)
+- GitHub: https://github.com/mdimran29
+- Repositories: 38 public projects
+- Focus: Blockchain, DeFi, Smart Contracts, Web3, Full-Stack Development
+
+## Core Expertise
+
+### Smart Contract Development
+- Solidity 0.8.x with gas optimization techniques
+- Foundry framework for testing and deployment
+- OpenZeppelin security standards and patterns
+- ERC-20 and ERC-721 token implementations
+- Custom errors for gas efficiency
+- Comprehensive test coverage (80%+)
+
+### DeFi Protocol Engineering
+- Algorithmic stablecoin systems (DSC Protocol)
+- Overcollateralized lending mechanisms
+- Cross-chain token bridges and rebase tokens
+- Chainlink oracle integration (VRF, Keepers, Price Feeds)
+- Liquidation mechanisms with health factor monitoring
+- Tokenization of real-world assets (Real Estate NFTs)
+
+### Security & Testing
+- Foundry fuzz testing and invariant testing
+- Reentrancy protection patterns
+- Access control with OpenZeppelin
+- Slither static analysis
+- Unit, integration, and staging tests
+- Gas optimization and snapshot analysis
+
+### Frontend Development
+- React and Next.js with TypeScript
+- Three.js and React Three Fiber for 3D experiences
+- Ethers.js and Web3.js integration
+- MetaMask and wallet connection patterns
+- Tailwind CSS and Framer Motion
+- Responsive and interactive UIs
+
+### Backend Development
+- Node.js and Express.js REST APIs
+- MongoDB with Mongoose ODM
+- Database optimization and connection management
+- Environment configuration with dotenv
+- CORS and security middleware
+
+## Featured Projects
+
+### 1. Petition.io Tax Receipt Generator
+Blockchain-verified legal tax receipts using OpenLaw smart contracts and MetaMask.
+- Stack: Node.js, Express, React, Vite, OpenLaw API, Ethers.js, MetaMask
+- Features: Cryptographic signatures (EIP-191), PDF generation, QR codes
+- Security: Server-side signature verification, input validation
+- Repository: https://github.com/mdimran29/Tax-Receipt
+
+### 2. DeFi Stablecoin Protocol (DSC)
+Algorithmic USD-pegged stablecoin with 200% overcollateralization.
+- Stack: Solidity 0.8.26, Foundry, Chainlink, OpenZeppelin
+- Features: WETH/WBTC collateral, automated liquidations, health monitoring
+- Architecture: DSCEngine.sol (17KB), DecentralizedStableCoin.sol (ERC-20)
+- Testing: Comprehensive fuzz testing, 80%+ coverage
+- Repository: https://github.com/mdimran29/foundry-defi-stablecoin
+- Deployed: Sepolia Testnet
+
+### 3. Real Estate Tokenization Platform
+NFT-based fractional property ownership platform.
+- Stack: Solidity, Vite, React, Ethers.js, ERC-721
+- Contracts: TokenizationManager (0xcE5938311925624E9FE619cc493AF5eA16bc46E2)
+- Network: Ethereum Sepolia (Chain ID: 11155111)
+- Features: Property NFTs, fractional ownership, wallet integration
+- Repository: https://github.com/mdimran29/Real-Estate
+
+### 4. Foundry Smart Contract Lottery
+Decentralized lottery with Chainlink VRF for provably fair randomness.
+- Stack: Solidity 0.8.19, Foundry, Chainlink VRF, Chainlink Keepers
+- Testing: 16/16 tests passing, 80.65% line coverage
+- Features: Automated upkeep, state machine, gas optimization
+- Repository: https://github.com/mdimran29/foundry-smart-contract-lottery
+
+### 5. Foundry NFT Collection
+Dual-type NFT implementation (IPFS + On-Chain SVG).
+- Stack: Solidity, Foundry, IPFS, SVG, Chainlink VRF, ERC-721
+- Types: IPFS-hosted (Pug, Shiba, St. Bernard) + Dynamic SVG (Happy/Sad)
+- Features: Base64 encoding, on-chain storage, multi-network deployment
+- Repository: https://github.com/mdimran29/foundry-nft
+
+### 6. Cross-Chain Rebase Token
+Elastic supply token with cross-chain bridging.
+- Stack: Solidity, Foundry, Cross-Chain Protocols
+- Features: Rebase mechanism, bridge integration, supply synchronization
+- Repository: https://github.com/mdimran29/cross-chain-rebase-token
+
+### 7. 3D Interactive Portfolio
+Next.js portfolio with Three.js 3D animations.
+- Stack: Next.js, React, TypeScript, Three.js, React Three Fiber, Framer Motion
+- Features: DNA Helix, particle systems, geometric shapes, mouse parallax
+- Components: FloatingRings, EnergyGrid, ParticleSphere, LightTrails
+- Repository: https://github.com/mdimran29/Portfolio
+
+### 8. Node Hotels Backend API
+Hotel management system with MongoDB.
+- Stack: Node.js, Express.js, MongoDB, Mongoose
+- Features: Connection management, error handling, REST API
+- Repository: https://github.com/mdimran29/node_hotels
+
+### 9. Travel Companion
+Travel planning application deployed on Vercel.
+- Stack: React, JavaScript, CSS, Vercel
+- Live: https://travel-companion-gamma.vercel.app
+- Repository: https://github.com/mdimran29/TravelCompanion
+
+### 10. Manage Your Todolist
+Task management with React and Tailwind CSS.
+- Stack: React.js, Tailwind CSS, LocalStorage
+- Features: CRUD operations, React Hooks, responsive design
+- Repository: https://github.com/mdimran29/Manage-Your-Todolist
+
+## Technical Stack
+
+### Languages
+Solidity (0.8.x), JavaScript, TypeScript, Python, HTML5, CSS3, SQL
+
+### Smart Contract Tools
+Foundry, Hardhat, OpenZeppelin, Cast CLI, Anvil, Slither, Etherscan API
+
+### Blockchain & Web3
+Ethereum, Chainlink VRF, Chainlink Keepers, Chainlink Price Feeds, Ethers.js, Web3.js, MetaMask, OpenLaw
+
+### Frontend
+React, Next.js, Vite, Three.js, React Three Fiber, Framer Motion, Tailwind CSS, Bootstrap
+
+### Backend
+Node.js, Express.js, MongoDB, Mongoose, REST APIs, dotenv, CORS
+
+### Testing
+Foundry Test, Fuzz Testing, Invariant Testing, Unit Tests, Integration Tests, Coverage Reports
+
+### Deployment
+Vercel, Sepolia Testnet, Ethereum Mainnet, MongoDB Atlas, Alchemy, Infura
+
+### Development Tools
+Git, GitHub, VS Code, Makefile, GitHub Actions, Docker
+
+## Services Offered
+
+1. **Smart Contract Development**
+   - Production-ready Solidity contracts
+   - Gas optimization and security best practices
+   - ERC-20, ERC-721, custom token standards
+   - Comprehensive testing (80%+ coverage)
+
+2. **DeFi Protocol Engineering**
+   - Staking systems and yield protocols
+   - Algorithmic stablecoins and lending
+   - Cross-chain bridges and rebase mechanisms
+   - Chainlink oracle integration
+
+3. **Smart Contract Auditing & Security**
+   - Security reviews and vulnerability assessments
+   - Fuzz testing and invariant testing
+   - Reentrancy protection and access control
+   - Gas optimization analysis
+
+4. **NFT & Token Development**
+   - ERC-721 implementations (IPFS + On-Chain)
+   - Dynamic NFTs with Chainlink VRF
+   - Real-world asset tokenization
+   - Metadata standards and Base64 encoding
+
+5. **Full-Stack Web3 Development**
+   - React/Next.js with TypeScript
+   - Web3 wallet integration (MetaMask, WalletConnect)
+   - 3D interactive experiences with Three.js
+   - Responsive and modern UI/UX
+
+6. **Backend & Infrastructure**
+   - Node.js REST APIs
+   - MongoDB database design
+   - Deployment and CI/CD pipelines
+   - Multi-network contract deployment
+
+## Key Achievements
+
+- 38 public repositories showcasing diverse expertise
+- 8+ production-ready blockchain projects
+- 80%+ test coverage on core smart contracts
+- 16/16 tests passing on lottery system
+- Real Estate tokenization on Sepolia testnet
+- Cross-chain and DeFi protocol implementations
+- 3D interactive portfolio with Three.js
+- Multiple full-stack applications deployed
+
+## Development Philosophy
+
+- **Security First**: Comprehensive testing and security patterns
+- **Gas Optimization**: Efficient code with custom errors
+- **Clean Architecture**: Modular and maintainable code
+- **Test Coverage**: 80%+ coverage standard
+- **Best Practices**: Industry-standard patterns and tools
+- **Documentation**: Clear comments and NatSpec
+- **Open Source**: Active GitHub presence
+
+## Project Statistics
+
+- Total Repositories: 38
+- Blockchain Projects: 8+
+- Frontend Projects: 5+
+- Backend Projects: 3+
+- Test Coverage: 80%+ on contracts
+- Stars: Multiple projects with community engagement
+
+## Blog Articles
+
+### 1. Building Production DeFi: Lessons from Petition.io
+Deep dive into architecting a zero-principal-risk donation protocol with Rocket Pool and Uniswap V3 integration.
+- Topics: DeFi architecture, Protocol-Owned Liquidity, yield donation model
+- Length: ~3,200 words (~15 min read)
+- URL: /blog/building-production-defi-petition-io
+
+### 2. Smart Contract Security: Testing Patterns with Foundry
+Comprehensive guide to unit, fuzz, and invariant testing strategies for bulletproof smart contracts.
+- Topics: Foundry testing, security patterns, real bugs caught
+- Length: ~3,500 words (~17 min read)
+- URL: /blog/smart-contract-testing-patterns-foundry
+
+### 3. Learning in Public: My Web3 Journey
+From zero to Blockchain Engineer — sharing resources, mistakes, and insights from my path into Web3.
+- Topics: Learning journey, mistakes and lessons, career advice
+- Length: ~3,100 words (~14 min read)
+- URL: /blog/learning-in-public-web3-journey
+
+## Contact & Collaboration
+
+Looking for smart contract development, DeFi protocols, or Web3 full-stack solutions?
+
+- GitHub: https://github.com/mdimran29
+- Email: dev.mdimran@gmail.com
+- Phone: +91 8910992195
+- WhatsApp: +91 8910992195
+- Location: Kolkata, West Bengal, India
+- LinkedIn: https://www.linkedin.com/in/md-imran-5b0b8a1b0
+- Portfolio: https://mdimran29.vercel.app
+
+## Website Structure
+
+- Home: Main landing page with 3D interactive background
+- About: Professional background and expertise
+- Services: 10 specialized services offered
+- Projects: 10+ featured blockchain and Web3 projects
+- Experience: Work history and achievements
+- Skills: 66+ technologies across 8 categories
+- Certifications: Education and professional certifications
+- Blog: 3 in-depth technical articles
+- Contact: Contact form with Google Maps integration
+
+## Special Features
+
+- **Day/Night Theme System**: Three dramatic modes (night, twilight, day)
+- **3D Interactive Background**: Three.js starfield, particle systems, light trails
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Email Integration**: Working contact form with Nodemailer backend
+- **Google Maps**: Embedded map showing Kolkata location
+- **Blog System**: Dynamic markdown rendering with syntax highlighting
+- **Smooth Animations**: Framer Motion transitions throughout
+
+## License
+MIT License - Open for collaboration and contributions
+
+## Last Updated
+February 2026
+
+---
+
+Available for:
+- Smart Contract Development & Auditing
+- DeFi Protocol Design & Implementation
+- NFT & Token Development
+- Full-Stack Web3 Applications
+- Technical Consulting & Code Reviews
+- Blockchain Architecture Design
+
+Contact via GitHub or email for project inquiries.

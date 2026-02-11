@@ -1,0 +1,21 @@
+# robots.txt for Md Imran's Portfolio
+# Blockchain Engineer & Full Stack Web3 Developer
+
+User-agent: *
+Allow: /
+
+# Allow all content
+Allow: /blog/
+Allow: /projects/
+Allow: /public/
+
+# Sitemap location
+Sitemap: https://mdimran29.vercel.app/sitemap.xml
+
+# LLM-friendly documentation
+# For AI assistants and language models
+Allow: /llm.txt
+
+# Additional information for crawlers
+# LLM.txt contains comprehensive portfolio data
+# optimized for AI assistants and search engines
