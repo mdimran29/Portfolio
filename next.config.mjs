@@ -9,6 +9,10 @@ const nextConfig = {
   },
   // Fix for multiple lockfiles warning
   outputFileTracingRoot: process.cwd(),
+  // Environment variables for runtime
+  env: {
+    NEXT_PUBLIC_BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_URL,
+  },
 };
 
 export default nextConfig;

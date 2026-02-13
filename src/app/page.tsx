@@ -44,6 +44,11 @@ const StarFieldScene = dynamic(() => import('@/components/scenes/StarFieldScene'
 // Backend API Base URL - uses environment variable in production, localhost in development
 const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
 
+// Log the backend URL in development (removed in production by compiler)
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Backend URL:', BASE_URL);
+}
+
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
