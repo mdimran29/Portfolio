@@ -55,8 +55,10 @@ const corsOptions = {
       FRONTEND_URL,
       'http://localhost:3000',
       'http://localhost:3001',
-      'https://mdimran29.vercel.app', // Add your production domain
-      'https://portfolio-mdimran.vercel.app' // Add any other domains
+      'https://mdimran-portfolio.vercel.app', // Your actual production domain
+      'https://portfolio-mdimran29s-projects.vercel.app', // Vercel auto-generated domain
+      'https://mdimran29.vercel.app', // Alternative domain if exists
+      'https://portfolio-mdimran.vercel.app' // Alternative domain if exists
     ];
     
     if (allowedOrigins.includes(origin)) {
