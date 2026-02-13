@@ -41,6 +41,9 @@ const StarFieldScene = dynamic(() => import('@/components/scenes/StarFieldScene'
   ssr: false,
 });
 
+// Backend API Base URL - uses environment variable in production, localhost in development
+const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -217,7 +220,7 @@ export default function Home() {
         _formTiming: timeTaken // Send time taken to backend for analysis
       };
       
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
