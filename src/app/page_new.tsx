@@ -374,7 +374,7 @@ export default function Home() {
         >
           <div className="text-center space-y-6">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              Let's Build Something Amazing Together
+              Let&apos;s Build Something Amazing Together
             </h3>
             <p className="text-white/60 text-sm sm:text-base mb-6">
               📍 Titagarh, Kolkata - 700119, North 24 Parganas, West Bengal, India

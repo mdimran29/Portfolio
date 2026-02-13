@@ -838,7 +838,10 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row items-start justify-between mb-4 gap-3">
                   <h3 className="text-xl sm:text-2xl font-bold text-white">ChainVault</h3>
                   <div className="flex gap-3">
-                    <a href="https://github.com/mdimran29" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                    <a href="https://chainvault-997c7.web.app/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-purple-400 transition-colors" title="Live Demo">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
+                    <a href="https://github.com/mdimran29/chainvault" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                   </div>
@@ -846,6 +849,20 @@ export default function Home() {
                 
                 <p className="text-white/80 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
                   Decentralized multi-signature wallet with advanced security features, time-locks, and role-based access control for managing digital assets across multiple chains.
+                </p>
+                
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="text-white font-semibold mb-2 text-sm sm:text-base">Smart Contract:</h4>
+                  <div className="flex items-start gap-2 text-xs sm:text-sm">
+                    <span className="text-white/70">Sepolia:</span>
+                    <a href="https://sepolia.etherscan.io/address/0xE6f6139929D658d31c5301F02bD8F5cE0b12Ffa4" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors break-all">
+                      0xE6f6139929D658d31c5301F02bD8F5cE0b12Ffa4
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
+                  <span className="text-green-400 font-semibold">✅ Deployed</span> on Ethereum Sepolia Testnet
                 </p>
                 
                 <div className="mb-4 sm:mb-6">
@@ -886,16 +903,41 @@ export default function Home() {
               {/* Project 3: PropToken */}
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-white">PropToken (ERC-1155)</h3>
+                  <h3 className="text-2xl font-bold text-white">Real Estate Tokenization Platform</h3>
                   <div className="flex gap-3">
-                    <a href="https://github.com/mdimran29" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                    <a href="https://real-estate-rust-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-purple-400 transition-colors" title="Live Demo">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
+                    <a href="https://github.com/mdimran29/Real-Estate" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                   </div>
                 </div>
                 
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Real estate tokenization platform using ERC-1155 for fractional property ownership. Enables property owners to tokenize assets and investors to buy fractional shares.
+                  NFT-based fractional property ownership platform using ERC-1155 for real estate tokenization. Enables property owners to tokenize assets and investors to buy fractional shares.
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Smart Contracts:</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-start gap-2">
+                      <span className="text-white/70">Tokenization Manager:</span>
+                      <a href="https://sepolia.etherscan.io/address/0xcE5938311925624E9FE619cc493AF5eA16bc46E2" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors break-all">
+                        0xcE5938311925624E9FE619cc493AF5eA16bc46E2
+                      </a>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-white/70">Property Deed NFT:</span>
+                      <a href="https://sepolia.etherscan.io/address/0x414AbAbf01976f66757a3bF3a603adB95b97fDe6" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors break-all">
+                        0x414AbAbf01976f66757a3bF3a603adB95b97fDe6
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  <span className="text-green-400 font-semibold">✅ Deployed & Verified</span> on Ethereum Sepolia Testnet • Created: March 2025
                 </p>
                 
                 <div className="mb-6">
@@ -938,14 +980,18 @@ export default function Home() {
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-2xl font-bold text-white">Foundry Smart Lottery</h3>
                   <div className="flex gap-3">
-                    <a href="https://github.com/mdimran29" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                    <a href="https://github.com/mdimran29/foundry-smart-contract-lottery" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                   </div>
                 </div>
                 
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Provably fair lottery system using Chainlink VRF for verifiable randomness. Demonstrates advanced Foundry testing patterns and gas optimization techniques.
+                  Decentralized lottery with Chainlink VRF for provably fair randomness. Demonstrates advanced Foundry testing patterns and gas optimization techniques.
+                </p>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  <span className="text-green-400 font-semibold">✅ Production-Ready</span> • 16/16 tests passing • 80.65% test coverage • Supports Sepolia Testnet • Created: March 2025
                 </p>
                 
                 <div className="mb-6">
@@ -988,14 +1034,18 @@ export default function Home() {
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-2xl font-bold text-white">Blockchain Tax Receipt System</h3>
                   <div className="flex gap-3">
-                    <a href="https://github.com/mdimran29" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
+                    <a href="https://github.com/mdimran29/Tax-Receipt" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-cyan-400 transition-colors">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                   </div>
                 </div>
                 
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Full-stack blockchain application generating legally binding, cryptographically signed tax receipts for cryptocurrency staking rewards using OpenLaw smart contracts and MetaMask wallet integration.
+                  Blockchain-verified legal tax receipts using OpenLaw smart contracts and MetaMask. Full-stack application generating legally binding, cryptographically signed tax receipts for cryptocurrency staking rewards.
+                </p>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  <span className="text-green-400 font-semibold">✅ Production-Ready</span> • Backend + Frontend Local • Uses OpenLaw API • Created: September 2025
                 </p>
                 
                 <div className="mb-6">
@@ -1051,7 +1101,29 @@ export default function Home() {
                 </div>
                 
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Algorithmic USD-pegged stablecoin with 200% overcollateralization, supporting WETH and WBTC deposits with Chainlink price feeds and automated liquidation mechanisms for maintaining system solvency.
+                  Algorithmic USD-pegged stablecoin with 200% overcollateralization, supporting WETH and WBTC deposits with Chainlink price feeds and automated liquidation mechanisms.
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Smart Contracts:</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-start gap-2">
+                      <span className="text-white/70">DSCEngine:</span>
+                      <a href="https://sepolia.etherscan.io/address/0x091EA0838eBD5b7ddA2F2A641B068d6D59639b98" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors break-all">
+                        0x091EA0838eBD5b7ddA2F2A641B068d6D59639b98
+                      </a>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-white/70">WETH Token:</span>
+                      <a href="https://sepolia.etherscan.io/address/0xdd13E55209Fd76AfE204dBda4007C227904f0a81" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors break-all">
+                        0xdd13E55209Fd76AfE204dBda4007C227904f0a81
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  <span className="text-green-400 font-semibold">✅ Deployed & Verified</span> on Ethereum Sepolia Testnet • Created: March 2025
                 </p>
                 
                 <div className="mb-6">
@@ -1118,7 +1190,11 @@ export default function Home() {
                 </div>
                 
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Advanced Solidity implementation of a rebase token with cross-chain bridging capabilities for multi-chain DeFi operations. <span className="text-cyan-400 font-semibold">⭐ 1 Star</span>
+                  Elastic supply token with cross-chain bridging capabilities for multi-chain DeFi operations.
+                </p>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  <span className="text-yellow-400 font-semibold">⚙️ In Development</span> • Created: April 2025
                 </p>
                 
                 <div className="mb-6">
@@ -1168,7 +1244,11 @@ export default function Home() {
                 </div>
                 
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Comprehensive NFT implementation featuring IPFS-hosted and fully on-chain SVG NFTs with production deployment. <span className="text-cyan-400 font-semibold">⭐ 1 Star</span> • <span className="text-purple-400">Cyfrin Course</span>
+                  Dual-type NFT implementation (IPFS-hosted + On-Chain SVG) with Chainlink VRF for provably fair randomness.
+                </p>
+                
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  <span className="text-green-400 font-semibold">✅ Production-Ready</span> • Supports Sepolia Testnet • Created: February 2025
                 </p>
                 
                 <div className="mb-6">

@@ -41,8 +41,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = blogPosts[params.slug as keyof typeof blogPosts];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = blogPosts[slug as keyof typeof blogPosts];
   
   if (!post) {
     return {
@@ -56,15 +57,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const post = blogPosts[params.slug as keyof typeof blogPosts];
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = blogPosts[slug as keyof typeof blogPosts];
 
   if (!post) {
     notFound();
   }
 
   // Read markdown file
-  const filePath = path.join(process.cwd(), 'blog', `${params.slug}.md`);
+  const filePath = path.join(process.cwd(), 'blog', `${slug}.md`);
   
   let content: string;
   try {
@@ -138,10 +140,10 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         <div className="mt-16 pt-8 border-t border-white/10">
           <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-400/30 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Found this helpful? Let's connect!
+              Found this helpful? Let&apos;s connect!
             </h3>
             <p className="text-white/70 mb-6">
-              I'm always open to discussing DeFi, smart contract security, and Web3 development.
+              I&apos;m always open to discussing DeFi, smart contract security, and Web3 development.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
