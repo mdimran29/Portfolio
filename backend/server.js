@@ -30,7 +30,7 @@ const app = express();
 // Environment configuration
 const PORT = process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const FRONTEND_URL = process.env.FRONTEND_URL || 'https://mdimran--portfolio.vercel.app';
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
 
 /**
  * ============================================================================
@@ -45,10 +45,10 @@ app.use(helmet({
 }));
 
 // CORS configuration
-// Flexible CORS that allows Vercel deployments and localhost
+// Allows requests from your frontend
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, Postman, curl, etc.)
+    // Allow requests with no origin (mobile apps, Postman, etc.)
     if (!origin) return callback(null, true);
     
     // Check if origin is from Vercel (matches *.vercel.app)
@@ -61,12 +61,9 @@ const corsOptions = {
     const allowedOrigins = [
       FRONTEND_URL,
       'http://localhost:3000',
-      'http://localhost:5000'
     ];
     
-    const isAllowed = isVercelDomain || allowedOrigins.includes(origin);
-    
-    if (isAllowed) {
+    if (allowedOrigins.includes(origin) || isVercelDomain) {
       callback(null, true);
     } else {
       console.log('⚠️ CORS Blocked origin:', origin);
@@ -211,16 +208,14 @@ const startServer = async () => {
     }
 
     // Start the server
-    // Bind to 0.0.0.0 for Railway deployment (required for Docker containers)
-    const HOST = '0.0.0.0';
-    app.listen(PORT, HOST, () => {
+    app.listen(PORT, () => {
       console.log('\n' + '='.repeat(60));
       console.log('🚀 Portfolio Backend Server Started Successfully!');
       console.log('='.repeat(60));
-      console.log(`📍 Server URL: http://${HOST}:${PORT}`);
+      console.log(`📍 Server URL: http://localhost:${PORT}`);
       console.log(`🌍 Environment: ${NODE_ENV}`);
       console.log(`📧 Email Service: ${isEmailValid ? '✅ Ready' : '❌ Not configured'}`);
-      console.log(`🔒 CORS: Vercel deployments & localhost allowed`);
+      console.log(`🔒 CORS Allowed: ${FRONTEND_URL}`);
       console.log('='.repeat(60));
       console.log('\n📝 Available Endpoints:');
       console.log(`   GET  /health                  - Health check`);

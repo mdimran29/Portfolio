@@ -11,14 +11,6 @@ const { sendAdminNotification, sendAutoReply } = require('../services/emailServi
 const router = express.Router();
 
 /**
- * OPTIONS /api/contact
- * Handle preflight CORS requests explicitly
- */
-router.options('/contact', (req, res) => {
-  res.status(200).end();
-});
-
-/**
  * Calculate Bot Score
  * Higher score = more likely to be a bot
  * Score > 5 = likely bot

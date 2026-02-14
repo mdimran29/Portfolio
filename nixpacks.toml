@@ -1,19 +1,11 @@
 [phases.setup]
 nixPkgs = ["nodejs_22"]
-aptPkgs = []
 
 [phases.install]
-# Install backend dependencies
-cmds = [
-  "cd backend && npm install --omit=dev"
-]
+cmds = ["cd backend && npm ci"]
 
 [phases.build]
-# Backend doesn't need a build step
-cmds = ["echo 'No build step required for Express backend'"]
+cmds = ["echo 'No build step required for backend'"]
 
 [start]
-cmd = "cd backend && node server.js"
-
-[variables]
-NODE_ENV = "production"
+cmd = "cd backend && npm start"
