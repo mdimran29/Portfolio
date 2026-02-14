@@ -26,6 +26,10 @@ const contactRoutes = require('./routes/contact');
 // Initialize Express app
 const app = express();
 
+// Trust proxy - Required for Railway, Heroku, and other proxy services
+// This allows Express to trust the X-Forwarded-* headers
+app.set('trust proxy', true);
+
 // Environment configuration
 const PORT = process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
