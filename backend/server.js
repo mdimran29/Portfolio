@@ -50,20 +50,23 @@ const corsOptions = {
     // Allow requests with no origin (mobile apps, Postman, etc.)
     if (!origin) return callback(null, true);
     
+    // Check if origin is from Vercel (matches *.vercel.app)
+    const isVercelDomain = origin && (
+      origin.endsWith('.vercel.app') || 
+      origin === 'https://mdimran-portfolio.vercel.app'
+    );
+    
     // Allowed origins
     const allowedOrigins = [
       FRONTEND_URL,
       'http://localhost:3000',
       'http://localhost:3001',
-      'https://mdimran-portfolio.vercel.app', // Your actual production domain
-      'https://portfolio-mdimran29s-projects.vercel.app', // Vercel auto-generated domain
-      'https://mdimran29.vercel.app', // Alternative domain if exists
-      'https://portfolio-mdimran.vercel.app' // Alternative domain if exists
     ];
     
-    if (allowedOrigins.includes(origin)) {
+    if (allowedOrigins.includes(origin) || isVercelDomain) {
       callback(null, true);
     } else {
+      console.log('⚠️ CORS Blocked origin:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
