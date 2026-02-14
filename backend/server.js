@@ -26,14 +26,11 @@ const contactRoutes = require('./routes/contact');
 // Initialize Express app
 const app = express();
 
-// Trust proxy - Required for Railway, Heroku, and other proxy services
-// This allows Express to trust the X-Forwarded-* headers
-app.set('trust proxy', true);
 
 // Environment configuration
 const PORT = process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
+const FRONTEND_URL = process.env.FRONTEND_URL || 'https://mdimran--portfolio.vercel.app';
 
 /**
  * ============================================================================
@@ -48,26 +45,28 @@ app.use(helmet({
 }));
 
 // CORS configuration
-// Allows requests from your frontend
+// Flexible CORS that allows Vercel deployments and localhost
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, Postman, etc.)
+    // Allow requests with no origin (mobile apps, Postman, curl, etc.)
     if (!origin) return callback(null, true);
     
     // Check if origin is from Vercel (matches *.vercel.app)
     const isVercelDomain = origin && (
       origin.endsWith('.vercel.app') || 
-      origin === 'https://mdimran-portfolio.vercel.app'
+      origin === 'https://mdimran--portfolio.vercel.app'
     );
     
     // Allowed origins
     const allowedOrigins = [
       FRONTEND_URL,
       'http://localhost:3000',
-      'http://localhost:3001',
+      'http://localhost:5000'
     ];
     
-    if (allowedOrigins.includes(origin) || isVercelDomain) {
+    const isAllowed = isVercelDomain || allowedOrigins.includes(origin);
+    
+    if (isAllowed) {
       callback(null, true);
     } else {
       console.log('⚠️ CORS Blocked origin:', origin);
@@ -212,14 +211,16 @@ const startServer = async () => {
     }
 
     // Start the server
-    app.listen(PORT, () => {
+    // Bind to 0.0.0.0 for Railway deployment (required for Docker containers)
+    const HOST = '0.0.0.0';
+    app.listen(PORT, HOST, () => {
       console.log('\n' + '='.repeat(60));
       console.log('🚀 Portfolio Backend Server Started Successfully!');
       console.log('='.repeat(60));
-      console.log(`📍 Server URL: http://localhost:${PORT}`);
+      console.log(`📍 Server URL: http://${HOST}:${PORT}`);
       console.log(`🌍 Environment: ${NODE_ENV}`);
       console.log(`📧 Email Service: ${isEmailValid ? '✅ Ready' : '❌ Not configured'}`);
-      console.log(`🔒 CORS Allowed: ${FRONTEND_URL}`);
+      console.log(`🔒 CORS: Vercel deployments & localhost allowed`);
       console.log('='.repeat(60));
       console.log('\n📝 Available Endpoints:');
       console.log(`   GET  /health                  - Health check`);
