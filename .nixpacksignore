@@ -1,0 +1,21 @@
+# Ignore frontend files for backend deployment
+node_modules/
+.next/
+out/
+build/
+dist/
+src/
+public/
+components/
+styles/
+pages/
+
+# Frontend config files
+next.config.*
+tailwind.config.*
+postcss.config.*
+tsconfig.json
+next-env.d.ts
+
+# Only deploy backend
+!backend/
