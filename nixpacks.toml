@@ -3,10 +3,9 @@ nixPkgs = ["nodejs_22"]
 aptPkgs = []
 
 [phases.install]
-# Install backend dependencies only
+# Install backend dependencies
 cmds = [
-  "cd backend",
-  "npm ci --omit=dev 2>/dev/null || npm install --production"
+  "cd backend && npm install --omit=dev"
 ]
 
 [phases.build]
